@@ -57,6 +57,7 @@ namespace GameProject1
 
             // TODO: Add your update logic here
             skeleton.Position += inputManager.Direction;
+            //skeleton.Moving = inputManager.Moving;
             foreach (var bat in bats) bat.Update(gameTime);
 
             // FOR RECTANGLE COLLISIONS
@@ -80,7 +81,7 @@ namespace GameProject1
 
             doorways.Draw(gameTime, _spriteBatch);
             
-            skeleton.Draw(_spriteBatch, spriteEffects);
+            skeleton.Draw(gameTime,_spriteBatch, spriteEffects);
             foreach (var bat in bats) bat.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
