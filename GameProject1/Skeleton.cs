@@ -25,6 +25,12 @@ namespace GameProject1
         /// </summary>
         public Vector2 Position;
 
+        private double animationTimer;
+
+
+        private short animationFrame;
+
+
         public Skeleton(Game game, Vector2 position)
         {
             this.game = game;
@@ -45,9 +51,23 @@ namespace GameProject1
         /// its assigned color
         /// </summary>
         /// <param name="spriteBatch">The SpriteBatch to render with</param>
-        public void Draw(SpriteBatch spriteBatch, SpriteEffects spriteEffect)
+        public void Draw(GameTime gameTime, SpriteBatch spriteBatch, SpriteEffects spriteEffect)
         {
-            var source = new Rectangle(0, 0, 24,32);
+            //Update animation timer
+            animationTimer += gameTime.ElapsedGameTime.TotalSeconds;
+
+            //Update animation frame
+            if (animationTimer > 0.1)
+            {
+                animationTimer -= 0.1;
+                animationFrame++;
+                if (animationFrame > 10)
+                {
+                    animationFrame = 0;
+                }
+            }
+
+            var source = new Rectangle(animationFrame * 24, 0, 24,32);
 
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
             spriteBatch.Draw(
