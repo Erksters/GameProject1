@@ -11,6 +11,7 @@ namespace GameProject1
         private Skeleton skeleton;
         private FlyingBat[] bats;
         private SkeletonInputManager inputManager;
+        private Doorway doorways;
 
         public SkelletonGame()
         {
@@ -22,7 +23,7 @@ namespace GameProject1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            inputManager = new SkeletonInputManager();
+            inputManager = new SkeletonInputManager(new Vector2(200, 200));
             skeleton = new Skeleton(this, new Vector2(200, 200));
             bats = new FlyingBat[]
             {
@@ -30,6 +31,9 @@ namespace GameProject1
                 new FlyingBat(new Vector2(600, 350), 0.5),
                 new FlyingBat(new Vector2(600, 400), 0),
             };
+
+            doorways = new Doorway(new Vector2(350, 300));
+            
             base.Initialize();
         }
 
@@ -41,6 +45,9 @@ namespace GameProject1
             {
                 bat.LoadContent(Content);
             }
+            
+            doorways.LoadContent(Content);
+            
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,6 +59,15 @@ namespace GameProject1
             skeleton.Position += inputManager.Direction;
             foreach (var bat in bats) bat.Update(gameTime);
 
+            // FOR RECTANGLE COLLISIONS
+            skeleton.Color = Color.White;
+
+            if (doorways.RectangleBounds.CollidesWith(inputManager.Bounds))
+            {
+                skeleton.Color = Color.Red;
+            }
+
+
             base.Update(gameTime);
         }
 
@@ -61,6 +77,9 @@ namespace GameProject1
             SpriteEffects spriteEffects = (inputManager.flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
 
             _spriteBatch.Begin();
+
+            doorways.Draw(gameTime, _spriteBatch);
+            
             skeleton.Draw(_spriteBatch, spriteEffects);
             foreach (var bat in bats) bat.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
