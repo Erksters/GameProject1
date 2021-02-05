@@ -4,9 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/Flight.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/SkeletonIdle.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

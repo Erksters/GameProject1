@@ -72,3 +72,4 @@ C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\obj\Debug\netcoreapp3.1\GameProject1.csproj.CopyComplete
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\obj\Debug\netcoreapp3.1\GameProject1.genruntimeconfig.cache
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\SkeletonIdle.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\Flight.xnb

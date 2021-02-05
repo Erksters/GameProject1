@@ -25,7 +25,7 @@ namespace GameProject1
         /// </summary>
         public Vector2 Position;
 
-    public Skeleton(Game game, Vector2 position)
+        public Skeleton(Game game, Vector2 position)
         {
             this.game = game;
             Position = position;
@@ -50,7 +50,14 @@ namespace GameProject1
             var source = new Rectangle(0, 0, 24,32);
 
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
-            spriteBatch.Draw(texture, new Rectangle((int)Position.X, (int)Position.Y, 24,32), source, color, 0f, new Vector2(0,0),spriteEffect,0);
+            spriteBatch.Draw(
+                texture,
+                new Rectangle((int)Position.X, (int)Position.Y, 24,32),
+                source,
+                color,
+                0f,
+                new Vector2(0,0),
+                spriteEffect,0);
             
         }
 
