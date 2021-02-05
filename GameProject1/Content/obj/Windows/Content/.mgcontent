@@ -6,10 +6,12 @@
   <SourceFiles>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/../Assets/TileSet_Dungeon/Doorways-small.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/Flight.png</File>
+    <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/Skeleton Walk.png</File>
     <File>C:/Users/erkst/OneDrive/Documents/CIS_580/GameProjects/GameProject1/GameProject1/Content/SkeletonIdle.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Doorways-small.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

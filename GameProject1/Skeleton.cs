@@ -19,6 +19,7 @@ namespace GameProject1
         /// The texture to apply to a skeleton
         /// </summary>
         public Texture2D texture;
+        public Texture2D WalkingTexture;
 
         /// <summary>
         /// The position of the skeleton in the game world
@@ -30,6 +31,7 @@ namespace GameProject1
 
         private short animationFrame;
 
+        public bool Moving;
 
         public Skeleton(Game game, Vector2 position)
         {
@@ -44,6 +46,7 @@ namespace GameProject1
         public void LoadContent()
         {
             texture = game.Content.Load<Texture2D>("SkeletonIdle");
+            WalkingTexture = game.Content.Load<Texture2D>("Skeleton Walk");
         }
 
         /// <summary>
@@ -61,17 +64,22 @@ namespace GameProject1
             {
                 animationTimer -= 0.1;
                 animationFrame++;
-                if (animationFrame > 10)
+                if(Moving && animationFrame > 12)
+                {
+                    animationFrame = 0;
+                }
+                if (!Moving && animationFrame > 10)
                 {
                     animationFrame = 0;
                 }
             }
-
-            var source = new Rectangle(animationFrame * 24, 0, 24,32);
+            //13 frames of walking
+            //11 frames of idle
+            var source = new Rectangle(animationFrame * ((Moving) ? 22:24), 0, ((Moving) ? 22 : 24), 32);
 
             if (texture is null) throw new InvalidOperationException("Texture must be loaded to render");
             spriteBatch.Draw(
-                texture,
+                Moving ? WalkingTexture: texture,
                 new Rectangle((int)Position.X, (int)Position.Y, 24,32),
                 source,
                 Color,

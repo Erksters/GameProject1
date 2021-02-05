@@ -29,7 +29,7 @@ namespace GameProject1
         /// </summary>
         public bool flipped = false;
 
-        //public bool Moving = false;
+        public bool Moving = false;
 
         public SkeletonInputManager(Vector2 position)
         {
@@ -43,13 +43,13 @@ namespace GameProject1
             currentKeyboardState = Keyboard.GetState();
 
             Direction = new Vector2(0, 0);
-
+            Moving = false;
             ///Get Postion from Keyboard
             //Left
             if (currentKeyboardState.IsKeyDown(Keys.Left) || currentKeyboardState.IsKeyDown(Keys.A))
             {
                 flipped = true;
-                //Moving = true;
+                Moving = true;
                 Direction += new Vector2(-100 * (float)gameTime.ElapsedGameTime.TotalSeconds, 0);
             }
 
@@ -57,7 +57,7 @@ namespace GameProject1
             if (currentKeyboardState.IsKeyDown(Keys.Right) || currentKeyboardState.IsKeyDown(Keys.D))
             {
                 flipped = false;
-                //Moving = true;
+                Moving = true;
                 Direction += new Vector2(100 * (float)gameTime.ElapsedGameTime.TotalSeconds, 0);
             }
 

@@ -74,3 +74,4 @@ C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\SkeletonIdle.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\Flight.xnb
 C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\Doorways-small.xnb
+C:\Users\erkst\OneDrive\Documents\CIS_580\GameProjects\GameProject1\GameProject1\bin\Debug\netcoreapp3.1\Content\Skeleton Walk.xnb
