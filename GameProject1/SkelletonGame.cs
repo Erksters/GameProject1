@@ -57,7 +57,7 @@ namespace GameProject1
 
             // TODO: Add your update logic here
             skeleton.Position += inputManager.Direction;
-            //skeleton.Moving = inputManager.Moving;
+            skeleton.Moving = inputManager.Moving;
             foreach (var bat in bats) bat.Update(gameTime);
 
             // FOR RECTANGLE COLLISIONS
