@@ -23,7 +23,7 @@ namespace GameProject1
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            inputManager = new SkeletonInputManager();
+            inputManager = new SkeletonInputManager(new Vector2(200, 200));
             skeleton = new Skeleton(this, new Vector2(200, 200));
             bats = new FlyingBat[]
             {

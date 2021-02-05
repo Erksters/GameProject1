@@ -22,12 +22,19 @@ namespace GameProject1
         /// <summary>
         /// Detection box with the environment
         /// </summary>
-        public BoundingRectangle Bounds = new BoundingRectangle(new Vector2(200 - 16, 200 - 16), 32, 32); ///FOR RECTANGLE COLLISIONS
+        public BoundingRectangle Bounds; ///FOR RECTANGLE COLLISIONS
 
         /// <summary>
         /// Which way is the player facing
         /// </summary>
         public bool flipped = false;
+
+
+        public SkeletonInputManager(Vector2 position)
+        {
+            //Bounds = new BoundingRectangle(position - new Vector2(-16,-24) ,0,0)  ;
+            Bounds = new BoundingRectangle(position - new Vector2(-16, -12), 6, 18);
+        }
 
         public void Update(GameTime gameTime)
         {
