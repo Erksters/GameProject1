@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using CollisionExample.Collisions;
 
 namespace GameProject1
 {
@@ -13,8 +14,15 @@ namespace GameProject1
         private KeyboardState currentKeyboardState;
         private KeyboardState priorKeyboardState;
 
+        /// <summary>
+        /// Vector2 Direction for sprite velocity
+        /// </summary>
         public Vector2 Direction { get; private set; }
 
+        /// <summary>
+        /// Detection box with the environment
+        /// </summary>
+        public BoundingRectangle Bounds = new BoundingRectangle(new Vector2(200 - 16, 200 - 16), 32, 32); ///FOR RECTANGLE COLLISIONS
 
         /// <summary>
         /// Which way is the player facing
@@ -59,6 +67,9 @@ namespace GameProject1
                 Exit = true;
             }
 
+            ///FOR SQUARE COLLISIONS
+            Bounds.X += Direction.X;
+            Bounds.Y += Direction.Y;
         }
 
     }

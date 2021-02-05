@@ -13,7 +13,7 @@ namespace GameProject1
         /// <summary>
         /// A color to help distinguish when the skeleton is touching a bat from another
         /// </summary>
-        Color color;
+        public Color Color;
 
         /// <summary>
         /// The texture to apply to a skeleton
@@ -29,7 +29,7 @@ namespace GameProject1
         {
             this.game = game;
             Position = position;
-            color = Color.White;
+            Color = Color.White;
         }
 
         /// <summary>
@@ -54,11 +54,10 @@ namespace GameProject1
                 texture,
                 new Rectangle((int)Position.X, (int)Position.Y, 24,32),
                 source,
-                color,
+                Color,
                 0f,
                 new Vector2(0,0),
                 spriteEffect,0);
-            
         }
 
     }
